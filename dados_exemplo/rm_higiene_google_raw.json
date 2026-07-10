@@ -1,0 +1,34 @@
+{
+  "campanhas": [
+    {
+      "cpc": 0.5,
+      "ctr": 2.02,
+      "spend": 79.578814,
+      "clicks": 160,
+      "reach": 0,
+      "channel": "Google",
+      "account": "Customer 3013993639",
+      "campaign": "Rede De Pesquisa [ 01 ]",
+      "objective": "MAXIMIZE_CONVERSIONS",
+      "campaign_id": "16551a51-ff8f-4825-9b78-45a2ef1e6ca0",
+      "conversions": 7,
+      "impressions": 7903,
+      "campaign_status": "ENABLED",
+      "cost_per_conversion": 11.37,
+      "serie_diaria": [
+        {"date": "2026-07-03", "spend": 3.47},
+        {"date": "2026-07-06", "spend": 29.999621},
+        {"date": "2026-07-07", "spend": 15.72},
+        {"date": "2026-07-08", "spend": 15.519207},
+        {"date": "2026-07-09", "spend": 14.869986}
+      ]
+    }
+  ],
+  "por_dia": [
+    {"date": "2026-07-03", "spend": 3.47},
+    {"date": "2026-07-06", "spend": 29.999621},
+    {"date": "2026-07-07", "spend": 15.72},
+    {"date": "2026-07-08", "spend": 15.519207},
+    {"date": "2026-07-09", "spend": 14.869986}
+  ]
+}

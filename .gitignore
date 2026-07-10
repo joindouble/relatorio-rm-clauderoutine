@@ -1,0 +1,22 @@
+# Dados brutos de execução (a Routine salva aqui a cada run) — não versionar.
+# Os exemplos versionados ficam em dados_exemplo/.
+dados/*.json
+
+# Lista de clientes (e-mails + IDs de conta) — dado sensível, fica só local.
+dados/*.txt
+
+# Relatórios gerados (saída) — regeneráveis.
+output/*.html
+
+# Lixo do Windows / editores
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.pytest_cache/

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "120247814035140685",
+    "name": "[Mensagens] [WhatsApp] - 08/07",
+    "objective": "OUTCOME_ENGAGEMENT",
+    "effective_status": "ACTIVE",
+    "amount_spent": "R$29,81 BRL",
+    "impressions": "1.327",
+    "clicks": "35",
+    "reach": "876",
+    "cpc": "R$0,85 BRL",
+    "cpm": "R$22,46 BRL",
+    "ctr": "2,64%",
+    "cost_per_result": {"value": "R$4,26 BRL (Messaging conversations started)"},
+    "results": {"value": "7 (Messaging conversations started)"},
+    "serie_diaria": [
+      {"date": "8 de julho de 2026", "spend": 10.13},
+      {"date": "9 de julho de 2026", "spend": 19.68}
+    ]
+  },
+  {
+    "id": "23846714870460684",
+    "name": "Envolvimento 3 imagens",
+    "objective": "POST_ENGAGEMENT",
+    "effective_status": "PAUSED",
+    "amount_spent": "R$0,00 BRL",
+    "impressions": "0", "clicks": "0", "reach": "0",
+    "cost_per_result": {"value": "R$0,00 BRL (Post engagements)"},
+    "results": {"value": "0 (Post engagements)"},
+    "cpc": "Not available", "cpm": "Not available", "ctr": "Not available"
+  },
+  {
+    "id": "23846701375080684",
+    "name": "Lookalike (Video view) 50-75-95% SMS INSTA",
+    "objective": "MESSAGES",
+    "effective_status": "PAUSED",
+    "amount_spent": "R$0,00 BRL",
+    "impressions": "0", "clicks": "0", "reach": "0",
+    "cost_per_result": {"value": "R$0,00 BRL (Messaging conversations started)"},
+    "results": {"value": "0 (Messaging conversations started)"},
+    "cpc": "Not available", "cpm": "Not available", "ctr": "Not available"
+  },
+  {
+    "id": "23846697927000684",
+    "name": "Publicação: \"Klyo Desincrust \"",
+    "objective": "POST_ENGAGEMENT",
+    "effective_status": "PAUSED",
+    "amount_spent": "R$0,00 BRL",
+    "impressions": "0", "clicks": "0", "reach": "0",
+    "cost_per_result": {"value": "R$0,00 BRL (Post engagements)"},
+    "results": {"value": "0 (Post engagements)"},
+    "cpc": "Not available", "cpm": "Not available", "ctr": "Not available"
+  },
+  {
+    "id": "23846666277220684",
+    "name": "video view history",
+    "objective": "VIDEO_VIEWS",
+    "effective_status": "PAUSED",
+    "amount_spent": "R$0,00 BRL",
+    "impressions": "0", "clicks": "0", "reach": "0",
+    "cost_per_result": {"value": [{"indicator": "video_thruplay_watched_actions"}]},
+    "results": {"value": [{"indicator": "video_thruplay_watched_actions"}]},
+    "cpc": "Not available", "cpm": "Not available", "ctr": "Not available"
+  }
+]

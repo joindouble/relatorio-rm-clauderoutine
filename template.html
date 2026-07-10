@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="x-apple-disable-message-reformatting">
+<title>Relatório semanal — {{cliente_nome}}</title>
+<!--[if mso]>
+<style type="text/css">table,td,div,p,a,span{font-family:Arial,Helvetica,sans-serif !important;}</style>
+<![endif]-->
+</head>
+<body style="margin:0;padding:0;background-color:#020617;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+
+<!-- ===== WRAPPER 100% ===== -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#020617" style="background-color:#020617;margin:0;padding:0;">
+<tr>
+<td align="center" bgcolor="#020617" style="padding:28px 12px;">
+
+<!-- ===== CONTAINER 600px ===== -->
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#020617" style="width:600px;max-width:600px;background-color:#020617;border-collapse:collapse;">
+
+  <!-- ============================================================ -->
+  <!-- 1. CABEÇALHO -->
+  <!-- ============================================================ -->
+  <tr>
+  <td style="padding:0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:16px;">
+    <tr>
+    <td style="padding:30px 30px 28px 30px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td align="left" valign="middle" style="padding:0;">
+          <img src="{{agencia_logo_url}}" width="42" height="42" alt="Logo da agência" style="display:block;border:0;outline:none;width:42px;height:42px;">
+        </td>
+        <td align="right" valign="middle" style="padding:0;font-family:'Courier New',Courier,monospace;font-size:11px;line-height:16px;letter-spacing:3px;color:#94A3B8;text-transform:uppercase;">
+          Relatório semanal
+        </td>
+      </tr>
+      </table>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:32px;line-height:38px;font-weight:500;letter-spacing:-1px;color:#F8FAFC;margin:24px 0 0 0;">{{cliente_nome}}</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;font-weight:400;color:#CBD5F5;margin:8px 0 0 0;">{{periodo_label}}</div>
+    </td>
+    </tr>
+    </table>
+  </td>
+  </tr>
+
+  <!-- linha gradiente -->
+  <tr><td style="padding:18px 4px 0 4px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+    <td height="3" bgcolor="#3B82F6" style="height:3px;line-height:3px;font-size:3px;border-radius:3px;background-color:#3B82F6;">&nbsp;</td>
+    </tr></table>
+  </td></tr>
+
+  <!-- ============================================================ -->
+  <!-- 2. DASHBOARD GERAL -->
+  <!-- ============================================================ -->
+  <tr>
+  <td style="padding:36px 4px 0 4px;">
+    <div style="font-family:'Courier New',Courier,monospace;font-size:11px;line-height:16px;letter-spacing:3px;color:#38BDF8;text-transform:uppercase;">01 · Visão geral</div>
+    <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:12px 0 0 0;">Desempenho consolidado</div>
+    <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;font-weight:400;color:#94A3B8;margin:8px 0 0 0;">Soma de todas as campanhas ativas no período.</div>
+  </td>
+  </tr>
+
+  <!-- KPI destaque: investimento total -->
+  <tr>
+  <td style="padding:20px 4px 0 4px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E3A5F;border-radius:14px;"><tr>
+      <td width="4" bgcolor="#3B82F6" style="width:4px;background-color:#3B82F6;border-radius:4px 0 0 4px;">&nbsp;</td>
+      <td style="padding:22px 24px 22px 22px;">
+        <div style="font-family:'Courier New',Courier,monospace;font-size:11px;line-height:14px;letter-spacing:2px;color:#94A3B8;text-transform:uppercase;">Investimento total</div>
+        <div style="font-family:Arial,Helvetica,sans-serif;font-size:40px;line-height:44px;font-weight:500;letter-spacing:-1.5px;color:#F8FAFC;margin:10px 0 0 0;">{{dash_investimento_total}}</div>
+      </td>
+    </tr></table>
+  </td>
+  </tr>
+
+  <!-- KPI grid 3 colunas -->
+  <tr>
+  <td style="padding:10px 4px 0 4px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td width="33.33%" valign="top" style="padding:0 5px 0 0;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0F172A" style="background-color:#0F172A;border:1px solid #1E293B;border-radius:12px;"><tr><td style="padding:16px 14px 15px 14px;">
+          <div style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Impressões / Visualizações</div>
+          <div style="font-family:Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:8px 0 0 0;">{{dash_impressoes_totais}}</div>
+        </td></tr></table>
+      </td>
+      <td width="33.33%" valign="top" style="padding:0 5px 0 5px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0F172A" style="background-color:#0F172A;border:1px solid #1E293B;border-radius:12px;"><tr><td style="padding:16px 14px 15px 14px;">
+          <div style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Cliques</div>
+          <div style="font-family:Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:8px 0 0 0;">{{dash_cliques_totais}}</div>
+        </td></tr></table>
+      </td>
+      <td width="33.33%" valign="top" style="padding:0 0 0 5px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0F172A" style="background-color:#0F172A;border:1px solid #1E293B;border-radius:12px;"><tr><td style="padding:16px 14px 15px 14px;">
+          <div style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Custo por clique médio (CPC)</div>
+          <div style="font-family:Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:8px 0 0 0;">{{dash_cpc_medio}}</div>
+        </td></tr></table>
+      </td>
+    </tr></table>
+  </td>
+  </tr>
+
+  <!-- Gráfico: investimento por plataforma -->
+  <tr>
+  <td style="padding:12px 4px 0 4px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0F172A" style="background-color:#0F172A;border:1px solid #1E293B;border-radius:14px;"><tr><td style="padding:22px 22px 18px 22px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;font-weight:500;color:#F8FAFC;margin:0 0 3px 0;">Investimento por plataforma</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;font-weight:400;color:#94A3B8;margin:0 0 14px 0;">Distribuição do investimento entre Meta Ads e Google Ads</div>
+      {{dash_grafico_investimento_por_plataforma}}
+    </td></tr></table>
+  </td>
+  </tr>
+
+  <!-- Gráfico: investimento por dia -->
+  <tr>
+  <td style="padding:12px 4px 0 4px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0F172A" style="background-color:#0F172A;border:1px solid #1E293B;border-radius:14px;"><tr><td style="padding:22px 22px 18px 22px;">
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:19px;font-weight:500;color:#F8FAFC;margin:0 0 3px 0;">Investimento por dia</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;font-weight:400;color:#94A3B8;margin:0 0 14px 0;">Valor investido em cada dia da semana</div>
+      {{dash_grafico_investimento_por_dia}}
+    </td></tr></table>
+  </td>
+  </tr>
+
+  <!-- ============================================================ -->
+  <!-- 3. MÉTRICAS POR PLATAFORMA -->
+  <!-- ============================================================ -->
+  <tr>
+  <td style="padding:38px 4px 0 4px;">
+    <div style="font-family:'Courier New',Courier,monospace;font-size:11px;line-height:16px;letter-spacing:3px;color:#38BDF8;text-transform:uppercase;">02 · Plataformas</div>
+    <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:12px 0 0 0;">Resumo por plataforma</div>
+  </td>
+  </tr>
+
+<!-- INICIO_BLOCO_PLATAFORMA -->
+  <tr>
+  <td style="padding:16px 4px 0 4px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0F172A" style="background-color:#0F172A;border:1px solid #1E293B;border-radius:14px;"><tr><td style="padding:22px 22px 20px 22px;">
+      <!-- topo: nome plataforma + investimento -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td align="left" valign="middle" style="padding:0;">
+          <span style="display:inline-block;font-family:'Courier New',Courier,monospace;font-size:11px;line-height:14px;letter-spacing:1.5px;text-transform:uppercase;color:#A5F3FC;background-color:#0B2440;border:1px solid #1E3A5F;border-radius:100px;padding:6px 14px;">{{plataforma_nome}}</span>
+        </td>
+        <td align="right" valign="middle" style="padding:0;">
+          <div style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Investido</div>
+          <div style="font-family:Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:3px 0 0 0;">{{plataforma_investimento_total}}</div>
+        </td>
+      </tr></table>
+      <!-- stats -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:18px;">
+        <tr>
+          <td width="50%" valign="top" style="padding:0 6px 10px 0;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#22D3EE" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#22D3EE;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Impressões / Visualizações</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{plataforma_impressoes}}</div>
+            </td></tr>
+            </table>
+          </td>
+          <td width="50%" valign="top" style="padding:0 0 10px 6px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#3B82F6" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#3B82F6;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Cliques</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{plataforma_cliques}}</div>
+            </td></tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="50%" valign="top" style="padding:0 6px 0 0;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#22D3EE" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#22D3EE;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Custo por clique (CPC)</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{plataforma_cpc}}</div>
+            </td></tr>
+            </table>
+          </td>
+          <td width="50%" valign="top" style="padding:0 0 0 6px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#3B82F6" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#3B82F6;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Taxa de cliques (CTR)</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#22D3EE;margin:9px 0 0 0;">{{plataforma_ctr}}</div>
+            </td></tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td></tr></table>
+  </td>
+  </tr>
+<!-- FIM_BLOCO_PLATAFORMA -->
+<!-- INICIO_BLOCO_PLATAFORMA -->
+  <tr>
+  <td style="padding:16px 4px 0 4px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0F172A" style="background-color:#0F172A;border:1px solid #1E293B;border-radius:14px;"><tr><td style="padding:22px 22px 20px 22px;">
+      <!-- topo: nome plataforma + investimento -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td align="left" valign="middle" style="padding:0;">
+          <span style="display:inline-block;font-family:'Courier New',Courier,monospace;font-size:11px;line-height:14px;letter-spacing:1.5px;text-transform:uppercase;color:#A5F3FC;background-color:#0B2440;border:1px solid #1E3A5F;border-radius:100px;padding:6px 14px;">{{plataforma_nome}}</span>
+        </td>
+        <td align="right" valign="middle" style="padding:0;">
+          <div style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Investido</div>
+          <div style="font-family:Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:3px 0 0 0;">{{plataforma_investimento_total}}</div>
+        </td>
+      </tr></table>
+      <!-- stats -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:18px;">
+        <tr>
+          <td width="50%" valign="top" style="padding:0 6px 10px 0;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#22D3EE" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#22D3EE;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Impressões / Visualizações</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{plataforma_impressoes}}</div>
+            </td></tr>
+            </table>
+          </td>
+          <td width="50%" valign="top" style="padding:0 0 10px 6px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#3B82F6" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#3B82F6;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Cliques</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{plataforma_cliques}}</div>
+            </td></tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="50%" valign="top" style="padding:0 6px 0 0;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#22D3EE" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#22D3EE;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Custo por clique (CPC)</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{plataforma_cpc}}</div>
+            </td></tr>
+            </table>
+          </td>
+          <td width="50%" valign="top" style="padding:0 0 0 6px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#3B82F6" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#3B82F6;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Taxa de cliques (CTR)</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#22D3EE;margin:9px 0 0 0;">{{plataforma_ctr}}</div>
+            </td></tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td></tr></table>
+  </td>
+  </tr>
+<!-- FIM_BLOCO_PLATAFORMA -->
+
+  <!-- ============================================================ -->
+  <!-- 4. CAMPANHAS -->
+  <!-- ============================================================ -->
+  <tr>
+  <td style="padding:38px 4px 0 4px;">
+    <div style="font-family:'Courier New',Courier,monospace;font-size:11px;line-height:16px;letter-spacing:3px;color:#38BDF8;text-transform:uppercase;">03 · Campanhas</div>
+    <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:12px 0 0 0;">Desempenho por campanha</div>
+  </td>
+  </tr>
+
+<!-- INICIO_BLOCO_CAMPANHA -->
+  <tr>
+  <td style="padding:16px 4px 0 4px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0F172A" style="background-color:#0F172A;border:1px solid #1E293B;border-radius:14px;"><tr><td style="padding:24px 22px 22px 22px;">
+
+      <!-- topo: plataforma + objetivo -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td align="left" valign="middle" style="padding:0;">
+          <span style="display:inline-block;font-family:'Courier New',Courier,monospace;font-size:10px;line-height:14px;letter-spacing:1.5px;text-transform:uppercase;color:#A5F3FC;background-color:#0B2440;border:1px solid #1E3A5F;border-radius:100px;padding:5px 12px;">{{campanha_plataforma}}</span>
+        </td>
+        <td align="right" valign="middle" style="padding:0;font-family:'Courier New',Courier,monospace;font-size:10px;line-height:14px;letter-spacing:1px;text-transform:uppercase;color:#94A3B8;">{{campanha_objetivo_label}}</td>
+      </tr></table>
+
+      <!-- nome -->
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:20px;line-height:25px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:16px 0 0 0;">{{campanha_nome}}</div>
+
+      <!-- investimento -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td valign="middle" style="padding:12px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:11px;line-height:16px;color:#94A3B8;letter-spacing:1.5px;text-transform:uppercase;">Investimento</td>
+        <td align="right" valign="middle" style="padding:12px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;">{{campanha_investimento}}</td>
+      </tr></table>
+
+      <!-- gráfico -->
+      <div style="margin:16px 0 0 0;">
+        {{campanha_grafico}}
+      </div>
+
+      <!-- divisória -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" bgcolor="#1E293B" style="height:1px;line-height:1px;font-size:1px;background-color:#1E293B;">&nbsp;</td></tr></table>
+      <div style="height:20px;line-height:20px;font-size:1px;">&nbsp;</div>
+
+      <!-- ============ MÉTRICAS (automação mantém só o bloco do objetivo da campanha) ============ -->
+
+
+
+
+
+
+
+<!-- METRICA_GOOGLE_PADRAO -->
+      <div style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:2px;color:#38BDF8;text-transform:uppercase;margin:0 0 12px 0;">Google Ads · Métricas padrão</div>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E3A5F;border-radius:12px;"><tr>
+        <td width="4" bgcolor="#22D3EE" style="width:4px;background-color:#22D3EE;border-radius:4px 0 0 4px;">&nbsp;</td>
+        <td style="padding:16px 18px 16px 18px;">
+          <div style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Custo por resultado</div>
+          <div style="font-family:Arial,Helvetica,sans-serif;font-size:34px;line-height:38px;font-weight:500;letter-spacing:-1px;color:#F8FAFC;margin:8px 0 0 0;">{{campanha_custo_por_resultado}}</div>
+        </td>
+      </tr></table>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;">
+        <tr>
+          <td width="50%" valign="top" style="padding:0px 6px 10px 0px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#22D3EE" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#22D3EE;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Impressões / Visualizações</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_impressoes}}</div>
+            </td></tr>
+          </table></td>
+          <td width="50%" valign="top" style="padding:0px 0px 10px 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#3B82F6" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#3B82F6;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Taxa de cliques (CTR)</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_ctr}}</div>
+            </td></tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td width="50%" valign="top" style="padding:0px 6px 0px 0px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#22D3EE" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#22D3EE;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Cliques</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_cliques}}</div>
+            </td></tr>
+          </table></td>
+          <td width="50%" valign="top" style="padding:0px 0px 0px 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#3B82F6" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#3B82F6;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Custo por clique (CPC)</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_cpc}}</div>
+            </td></tr>
+          </table></td>
+        </tr>
+      </table>
+<!-- /METRICA_GOOGLE_PADRAO -->
+
+    </td></tr></table>
+  </td>
+  </tr>
+<!-- FIM_BLOCO_CAMPANHA -->
+<!-- INICIO_BLOCO_CAMPANHA -->
+  <tr>
+  <td style="padding:16px 4px 0 4px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0F172A" style="background-color:#0F172A;border:1px solid #1E293B;border-radius:14px;"><tr><td style="padding:24px 22px 22px 22px;">
+
+      <!-- topo: plataforma + objetivo -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td align="left" valign="middle" style="padding:0;">
+          <span style="display:inline-block;font-family:'Courier New',Courier,monospace;font-size:10px;line-height:14px;letter-spacing:1.5px;text-transform:uppercase;color:#A5F3FC;background-color:#0B2440;border:1px solid #1E3A5F;border-radius:100px;padding:5px 12px;">{{campanha_plataforma}}</span>
+        </td>
+        <td align="right" valign="middle" style="padding:0;font-family:'Courier New',Courier,monospace;font-size:10px;line-height:14px;letter-spacing:1px;text-transform:uppercase;color:#94A3B8;">{{campanha_objetivo_label}}</td>
+      </tr></table>
+
+      <!-- nome -->
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:20px;line-height:25px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:16px 0 0 0;">{{campanha_nome}}</div>
+
+      <!-- investimento -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td valign="middle" style="padding:12px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:11px;line-height:16px;color:#94A3B8;letter-spacing:1.5px;text-transform:uppercase;">Investimento</td>
+        <td align="right" valign="middle" style="padding:12px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;">{{campanha_investimento}}</td>
+      </tr></table>
+
+      <!-- gráfico -->
+      <div style="margin:16px 0 0 0;">
+        {{campanha_grafico}}
+      </div>
+
+      <!-- divisória -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" bgcolor="#1E293B" style="height:1px;line-height:1px;font-size:1px;background-color:#1E293B;">&nbsp;</td></tr></table>
+      <div style="height:20px;line-height:20px;font-size:1px;">&nbsp;</div>
+
+      <!-- ============ MÉTRICAS (automação mantém só o bloco do objetivo da campanha) ============ -->
+
+<!-- METRICA_MENSAGENS -->
+      <div style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:2px;color:#38BDF8;text-transform:uppercase;margin:0 0 12px 0;">Mensagens · WhatsApp / Direct</div>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E3A5F;border-radius:12px;"><tr>
+        <td width="4" bgcolor="#22D3EE" style="width:4px;background-color:#22D3EE;border-radius:4px 0 0 4px;">&nbsp;</td>
+        <td style="padding:16px 18px 16px 18px;">
+          <div style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Custo por mensagem</div>
+          <div style="font-family:Arial,Helvetica,sans-serif;font-size:34px;line-height:38px;font-weight:500;letter-spacing:-1px;color:#F8FAFC;margin:8px 0 0 0;">{{campanha_custo_mensagem}}</div>
+        </td>
+      </tr></table>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;">
+        <tr>
+          <td width="50%" valign="top" style="padding:0px 6px 10px 0px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#22D3EE" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#22D3EE;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Impressões / Visualizações</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_impressoes}}</div>
+            </td></tr>
+          </table></td>
+          <td width="50%" valign="top" style="padding:0px 0px 10px 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#3B82F6" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#3B82F6;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Alcance</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_alcance}}</div>
+            </td></tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td width="50%" valign="top" style="padding:0px 6px 10px 0px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#22D3EE" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#22D3EE;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Cliques</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_cliques}}</div>
+            </td></tr>
+          </table></td>
+          <td width="50%" valign="top" style="padding:0px 0px 10px 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#3B82F6" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#3B82F6;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Custo por clique (CPC)</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_cpc}}</div>
+            </td></tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td width="50%" valign="top" style="padding:0px 6px 0px 0px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#22D3EE" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#22D3EE;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Custo por mil impressões (CPM)</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_cpm}}</div>
+            </td></tr>
+          </table></td>
+          <td width="50%" valign="top" style="padding:0px 0px 0px 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#3B82F6" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#3B82F6;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Investido</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_investimento}}</div>
+            </td></tr>
+          </table></td>
+        </tr>
+      </table>
+<!-- /METRICA_MENSAGENS -->
+
+
+
+
+
+
+
+    </td></tr></table>
+  </td>
+  </tr>
+<!-- FIM_BLOCO_CAMPANHA -->
+<!-- INICIO_BLOCO_CAMPANHA -->
+  <tr>
+  <td style="padding:16px 4px 0 4px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0F172A" style="background-color:#0F172A;border:1px solid #1E293B;border-radius:14px;"><tr><td style="padding:24px 22px 22px 22px;">
+
+      <!-- topo: plataforma + objetivo -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td align="left" valign="middle" style="padding:0;">
+          <span style="display:inline-block;font-family:'Courier New',Courier,monospace;font-size:10px;line-height:14px;letter-spacing:1.5px;text-transform:uppercase;color:#A5F3FC;background-color:#0B2440;border:1px solid #1E3A5F;border-radius:100px;padding:5px 12px;">{{campanha_plataforma}}</span>
+        </td>
+        <td align="right" valign="middle" style="padding:0;font-family:'Courier New',Courier,monospace;font-size:10px;line-height:14px;letter-spacing:1px;text-transform:uppercase;color:#94A3B8;">{{campanha_objetivo_label}}</td>
+      </tr></table>
+
+      <!-- nome -->
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:20px;line-height:25px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:16px 0 0 0;">{{campanha_nome}}</div>
+
+      <!-- investimento -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td valign="middle" style="padding:12px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:11px;line-height:16px;color:#94A3B8;letter-spacing:1.5px;text-transform:uppercase;">Investimento</td>
+        <td align="right" valign="middle" style="padding:12px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;">{{campanha_investimento}}</td>
+      </tr></table>
+
+      <!-- gráfico -->
+      <div style="margin:16px 0 0 0;">
+        {{campanha_grafico}}
+      </div>
+
+      <!-- divisória -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" bgcolor="#1E293B" style="height:1px;line-height:1px;font-size:1px;background-color:#1E293B;">&nbsp;</td></tr></table>
+      <div style="height:20px;line-height:20px;font-size:1px;">&nbsp;</div>
+
+      <!-- ============ MÉTRICAS (automação mantém só o bloco do objetivo da campanha) ============ -->
+
+
+
+<!-- METRICA_TRAFEGO_PERFIL -->
+      <div style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:2px;color:#38BDF8;text-transform:uppercase;margin:0 0 12px 0;">Tráfego para o perfil · Instagram / Facebook</div>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E3A5F;border-radius:12px;"><tr>
+        <td width="4" bgcolor="#22D3EE" style="width:4px;background-color:#22D3EE;border-radius:4px 0 0 4px;">&nbsp;</td>
+        <td style="padding:16px 18px 16px 18px;">
+          <div style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Custo por tráfego para o perfil</div>
+          <div style="font-family:Arial,Helvetica,sans-serif;font-size:34px;line-height:38px;font-weight:500;letter-spacing:-1px;color:#F8FAFC;margin:8px 0 0 0;">{{campanha_custo_trafego_perfil}}</div>
+        </td>
+      </tr></table>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;">
+        <tr>
+          <td width="50%" valign="top" style="padding:0px 6px 10px 0px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#22D3EE" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#22D3EE;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Impressões / Visualizações</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_impressoes}}</div>
+            </td></tr>
+          </table></td>
+          <td width="50%" valign="top" style="padding:0px 0px 10px 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#3B82F6" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#3B82F6;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Alcance</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_alcance}}</div>
+            </td></tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td width="50%" valign="top" style="padding:0px 6px 10px 0px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#22D3EE" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#22D3EE;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Cliques</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_cliques}}</div>
+            </td></tr>
+          </table></td>
+          <td width="50%" valign="top" style="padding:0px 0px 10px 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#3B82F6" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#3B82F6;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Custo por clique (CPC)</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_cpc}}</div>
+            </td></tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td width="50%" valign="top" style="padding:0px 6px 0px 0px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#22D3EE" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#22D3EE;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Custo por mil impressões (CPM)</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_cpm}}</div>
+            </td></tr>
+          </table></td>
+          <td width="50%" valign="top" style="padding:0px 0px 0px 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#3B82F6" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#3B82F6;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Investido</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_investimento}}</div>
+            </td></tr>
+          </table></td>
+        </tr>
+      </table>
+<!-- /METRICA_TRAFEGO_PERFIL -->
+
+
+
+
+
+    </td></tr></table>
+  </td>
+  </tr>
+<!-- FIM_BLOCO_CAMPANHA -->
+<!-- INICIO_BLOCO_CAMPANHA -->
+  <tr>
+  <td style="padding:16px 4px 0 4px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0F172A" style="background-color:#0F172A;border:1px solid #1E293B;border-radius:14px;"><tr><td style="padding:24px 22px 22px 22px;">
+
+      <!-- topo: plataforma + objetivo -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td align="left" valign="middle" style="padding:0;">
+          <span style="display:inline-block;font-family:'Courier New',Courier,monospace;font-size:10px;line-height:14px;letter-spacing:1.5px;text-transform:uppercase;color:#A5F3FC;background-color:#0B2440;border:1px solid #1E3A5F;border-radius:100px;padding:5px 12px;">{{campanha_plataforma}}</span>
+        </td>
+        <td align="right" valign="middle" style="padding:0;font-family:'Courier New',Courier,monospace;font-size:10px;line-height:14px;letter-spacing:1px;text-transform:uppercase;color:#94A3B8;">{{campanha_objetivo_label}}</td>
+      </tr></table>
+
+      <!-- nome -->
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:20px;line-height:25px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:16px 0 0 0;">{{campanha_nome}}</div>
+
+      <!-- investimento -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td valign="middle" style="padding:12px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:11px;line-height:16px;color:#94A3B8;letter-spacing:1.5px;text-transform:uppercase;">Investimento</td>
+        <td align="right" valign="middle" style="padding:12px 0 0 0;font-family:Arial,Helvetica,sans-serif;font-size:22px;line-height:26px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;">{{campanha_investimento}}</td>
+      </tr></table>
+
+      <!-- gráfico -->
+      <div style="margin:16px 0 0 0;">
+        {{campanha_grafico}}
+      </div>
+
+      <!-- divisória -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" bgcolor="#1E293B" style="height:1px;line-height:1px;font-size:1px;background-color:#1E293B;">&nbsp;</td></tr></table>
+      <div style="height:20px;line-height:20px;font-size:1px;">&nbsp;</div>
+
+      <!-- ============ MÉTRICAS (automação mantém só o bloco do objetivo da campanha) ============ -->
+
+
+
+
+
+<!-- METRICA_ALCANCE -->
+      <div style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:2px;color:#38BDF8;text-transform:uppercase;margin:0 0 12px 0;">Alcance · Reconhecimento</div>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E3A5F;border-radius:12px;"><tr>
+        <td width="4" bgcolor="#22D3EE" style="width:4px;background-color:#22D3EE;border-radius:4px 0 0 4px;">&nbsp;</td>
+        <td style="padding:16px 18px 16px 18px;">
+          <div style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Custo por resultado</div>
+          <div style="font-family:Arial,Helvetica,sans-serif;font-size:34px;line-height:38px;font-weight:500;letter-spacing:-1px;color:#F8FAFC;margin:8px 0 0 0;">{{campanha_custo_por_resultado}}</div>
+        </td>
+      </tr></table>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;">
+        <tr>
+          <td width="50%" valign="top" style="padding:0px 6px 10px 0px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#22D3EE" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#22D3EE;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Impressões / Visualizações</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_impressoes}}</div>
+            </td></tr>
+          </table></td>
+          <td width="50%" valign="top" style="padding:0px 0px 10px 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#3B82F6" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#3B82F6;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Alcance</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_alcance}}</div>
+            </td></tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td width="50%" valign="top" style="padding:0px 6px 10px 0px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#22D3EE" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#22D3EE;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Cliques</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_cliques}}</div>
+            </td></tr>
+          </table></td>
+          <td width="50%" valign="top" style="padding:0px 0px 10px 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#3B82F6" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#3B82F6;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Custo por clique (CPC)</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_cpc}}</div>
+            </td></tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td width="50%" valign="top" style="padding:0px 6px 0px 0px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#22D3EE" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#22D3EE;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Custo por mil impressões (CPM)</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_cpm}}</div>
+            </td></tr>
+          </table></td>
+          <td width="50%" valign="top" style="padding:0px 0px 0px 6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E293B;border-radius:12px;">
+            <tr><td height="2" bgcolor="#3B82F6" style="height:2px;line-height:2px;font-size:2px;background-color:#3B82F6;border-radius:12px 12px 0 0;">&nbsp;</td></tr>
+            <tr><td style="padding:15px 16px 16px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                <td valign="middle" style="padding:0 7px 0 0;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="6" height="6" bgcolor="#3B82F6" style="width:6px;height:6px;line-height:6px;font-size:1px;mso-line-height-rule:exactly;background-color:#3B82F6;border-radius:50%;">&nbsp;</td></tr></table></td>
+                <td valign="middle" style="font-family:'Courier New',Courier,monospace;font-size:10px;line-height:13px;letter-spacing:1.5px;color:#94A3B8;text-transform:uppercase;">Investido</td>
+              </tr></table>
+              <div style="font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:28px;font-weight:500;letter-spacing:-0.5px;color:#F8FAFC;margin:9px 0 0 0;">{{campanha_investimento}}</div>
+            </td></tr>
+          </table></td>
+        </tr>
+      </table>
+<!-- /METRICA_ALCANCE -->
+
+
+
+    </td></tr></table>
+  </td>
+  </tr>
+<!-- FIM_BLOCO_CAMPANHA -->
+
+  <!-- ============================================================ -->
+  <!-- 5. INSIGHT -->
+  <!-- ============================================================ -->
+  <tr>
+  <td style="padding:38px 4px 0 4px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#0B1324" style="background-color:#0B1324;border:1px solid #1E3A5F;border-radius:14px;"><tr>
+      <td width="4" bgcolor="#3B82F6" style="width:4px;background-color:#3B82F6;border-radius:4px 0 0 4px;">&nbsp;</td>
+      <td style="padding:22px 24px 22px 22px;">
+        <div style="font-family:'Courier New',Courier,monospace;font-size:11px;line-height:16px;letter-spacing:3px;color:#38BDF8;text-transform:uppercase;">Insight da semana</div>
+        <div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:24px;font-weight:400;color:#CBD5F5;margin:12px 0 0 0;">{{insight_texto}}</div>
+      </td>
+    </tr></table>
+  </td>
+  </tr>
+
+  <!-- ============================================================ -->
+  <!-- 6. RODAPÉ -->
+  <!-- ============================================================ -->
+  <tr>
+  <td style="padding:34px 4px 8px 4px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" bgcolor="#1E293B" style="height:1px;line-height:1px;font-size:1px;background-color:#1E293B;">&nbsp;</td></tr></table>
+    <div style="font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:21px;font-weight:500;letter-spacing:-0.3px;color:#F8FAFC;margin:24px 0 0 0;">{{agencia_nome}}</div>
+    <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;font-weight:400;color:#94A3B8;margin:6px 0 0 0;">{{agencia_contato}}</div>
+    <div style="font-family:'Courier New',Courier,monospace;font-size:11px;line-height:16px;font-weight:400;color:#475569;margin:16px 0 0 0;letter-spacing:0.5px;">&copy; {{ano_atual}} {{agencia_nome}} · Relatório gerado automaticamente.</div>
+  </td>
+  </tr>
+
+</table>
+<!-- ===== /CONTAINER ===== -->
+
+</td>
+</tr>
+</table>
+<!-- ===== /WRAPPER ===== -->
+
+</body>
+</html>
