@@ -214,8 +214,9 @@ Use a ferramenta de criar rascunho do Gmail com:
     arquivo e passe o conteúdo byte a byte. NÃO reescreva, NÃO resuma, NÃO
     altere nada do HTML.
 Não envie. Só rascunho. Sem cc, sem bcc, sem anexo.
-Observação: a logo (embutida como data URI) pode não renderizar dentro do
-Gmail — isso é esperado, NÃO é erro; não tente consertar a logo.
+Observação: a logo é uma imagem hospedada (raw.githubusercontent.com/joindouble/
+logo-double). O Gmail carrega imagens externas via proxy — deve aparecer. Não
+altere o <img> da logo.
 
 ────────────────────────────────────────────────────────────
 PASSO 7 — Criar o evento de lembrete no Google Calendar
@@ -255,8 +256,9 @@ Se algo falhou, diga exatamente O QUÊ e em QUAL passo, e não crie o rascunho.
 - **Período** é calculado sozinho (`calcular_periodo`): semana anterior
   completa (seg–dom) relativa ao dia da execução. Rodando na segunda, pega a
   semana que acabou de fechar.
-- **Logo no Gmail:** o Gmail não renderiza imagem `data:`. Para a logo aparecer
-  no e-mail enviado, será preciso anexá-la como inline (CID) no passo de envio —
-  fica para quando você automatizar o envio real (hoje é rascunho + revisão).
+- **Logo no Gmail:** hospedada em `raw.githubusercontent.com/joindouble/logo-double`
+  (repo público, servida como image/png). URL absoluta em `AGENCIA_LOGO_URL` no
+  `report_engine.py`; o Gmail carrega via proxy. Para trocar a logo, suba o novo
+  PNG naquele repo (mesmo nome).
 - **Novos clientes:** duplique `clientes/rm_higiene.py`, troque o dict
   `CLIENTE`, e use este mesmo prompt trocando o nome do script e do cliente.

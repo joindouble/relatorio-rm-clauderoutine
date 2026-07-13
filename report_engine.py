@@ -15,11 +15,8 @@ Testado com dados reais da conta da R&M Higiene Profissional
 (Meta: 125319914616407 / Google via Flyweel, ambos coletados em 2026-07-09).
 """
 
-import base64
 import json
-import os
 import re
-import urllib.parse
 from datetime import datetime, date, timedelta
 
 # ============================================================================
@@ -31,19 +28,11 @@ from datetime import datetime, date, timedelta
 # ============================================================================
 AGENCIA_NOME = "Double Marketing e Performance"
 AGENCIA_CONTATO = "contato@joindouble.com.br"
-def _logo_data_uri():
-    """Embute a logo da Double no HTML como data URI (base64) — assim ela vai
-    "colada" no e-mail em vez de depender de imagem externa. Fallback: URL https
-    caso o arquivo local não exista."""
-    caminho = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", "double-logo.png")
-    try:
-        with open(caminho, "rb") as f:
-            return "data:image/png;base64," + base64.b64encode(f.read()).decode("ascii")
-    except Exception:
-        return "https://joindouble.com.br/imagens/site/logo-double.png"
-
-
-AGENCIA_LOGO_URL = _logo_data_uri()
+# Logo hospedada como imagem no GitHub (raw.githubusercontent). URL absoluta que
+# o Gmail carrega via proxy — ao contrário do data URI base64, que o Gmail
+# bloqueia. O arquivo é servido como image/png em:
+#   github.com/joindouble/logo-double  ->  branch main, double-logo.png
+AGENCIA_LOGO_URL = "https://raw.githubusercontent.com/joindouble/logo-double/main/double-logo.png"
 
 # ============================================================================
 # 1. PARSING — Meta Ads (MCP Meta Ads) retorna valores como texto formatado,
@@ -248,12 +237,28 @@ def normalizar_campanha_meta(raw):
 def normalizar_campanha_google(raw):
     impressoes = float(raw.get("impressions", 0) or 0)
     cliques = float(raw.get("clicks", 0) or 0)
+    cpc = float(raw.get("cpc", 0) or 0)
     ctr = (cliques / impressoes * 100) if impressoes else 0.0
     # Alcance no Google só existe para campanhas de Display/Vídeo/Demand Gen.
     # Campanha de Rede de Pesquisa devolve reach=0 (o Google não mede usuários
     # únicos aqui) — nesse caso o card de alcance vira CTR no template (ver
     # METRICA_GOOGLE_PADRAO). Só guarda o alcance se houver valor real (>0).
     reach = float(raw.get("reach", 0) or 0)
+
+    # "Custo por resultado" depende da estratégia de lance da campanha:
+    # em campanha de MAXIMIZAÇÃO DE CLIQUES (Google reporta como "TARGET_SPEND"
+    # ou "MAXIMIZE_CLICKS") o resultado É o clique — então o custo por resultado
+    # é o próprio CPC, e o card muda o rótulo para "Custo por clique". Nas demais
+    # (maximização de conversões etc.) usa o custo por conversão.
+    objetivo = (raw.get("objective") or "").upper()
+    maximiza_cliques = ("CLICK" in objetivo) or (objetivo == "TARGET_SPEND")
+    if maximiza_cliques:
+        custo_resultado = cpc
+        custo_resultado_label = "Custo por clique"
+    else:
+        custo_resultado = float(raw.get("cost_per_conversion", 0) or 0)
+        custo_resultado_label = "Custo por resultado"
+
     return {
         "id": raw.get("campaign_id"),
         "nome": raw.get("campaign", ""),
@@ -265,10 +270,11 @@ def normalizar_campanha_google(raw):
         "impressoes": impressoes,
         "alcance": reach if reach > 0 else None,
         "cliques": cliques,
-        "cpc": float(raw.get("cpc", 0) or 0),
+        "cpc": cpc,
         "cpm": None,
         "ctr": ctr,
-        "custo_por_resultado": float(raw.get("cost_per_conversion", 0) or 0),
+        "custo_por_resultado": custo_resultado,
+        "custo_resultado_label": custo_resultado_label,
         "qtd_resultado": float(raw.get("conversions", 0) or 0),
         "serie_diaria": raw.get("serie_diaria") or [],
     }
@@ -608,6 +614,7 @@ def montar_bloco_campanha(molde_campanha, campanha):
         "campanha_custo_mensagem": fmt_brl(campanha["custo_por_resultado"]),
         "campanha_custo_trafego_perfil": fmt_brl(campanha["custo_por_resultado"]),
         "campanha_custo_por_resultado": fmt_brl(campanha["custo_por_resultado"]),
+        "campanha_custo_resultado_label": campanha.get("custo_resultado_label", "Custo por resultado"),
     }
     return _preencher(bloco, valores)
 
