@@ -17,6 +17,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, REPO)
 from datetime import datetime
 from report_engine import (
+    BLOCO_TRAFEGO_PERFIL,
     gerar_relatorio_html, normalizar_campanha_meta, normalizar_campanha_google,
     _parse_data, _serie_semanal, _parse_meta_number, calcular_periodo,
     AGENCIA_CONTATO, AGENCIA_LOGO_URL,
@@ -141,6 +142,44 @@ raw_misto = [
 ]
 filtrado = [c for c in raw_misto if not flyweel_account or c.get("account") in (None, flyweel_account)]
 check([c["campaign"] for c in filtrado] == ["RM"], "so a conta do cliente passa")
+
+print("\n[CANAL] mensagens WhatsApp x Direct (por campanha)")
+_base = {"objective": "OUTCOME_ENGAGEMENT", "effective_status": "ACTIVE",
+         "amount_spent": "R$10,00 BRL", "impressions": "100", "clicks": "5", "reach": "90",
+         "cpc": "R$2,00 BRL", "cpm": "R$100,00 BRL",
+         "results": {"value": "2 (Messaging conversations started)"},
+         "cost_per_result": {"value": "R$5,00 BRL (Messaging conversations started)"}}
+_casos = [
+    ("[MENSAGENS] [DIRECT]", None, "Mensagens no Direct"),
+    ("[Mensagens] [WhatsApp] - Junho", None, "Mensagens no WhatsApp"),
+    ("Nova campanha de Engajamento", None, "Mensagens"),
+    ("Campanha X", "WHATSAPP", "Mensagens no WhatsApp"),
+    ("Campanha Y", "INSTAGRAM_DIRECT", "Mensagens no Direct"),
+]
+for _nome, _dest, _esperado in _casos:
+    _raw = dict(_base, name=_nome)
+    if _dest:
+        _raw["destination_type"] = _dest
+    _n = normalizar_campanha_meta(_raw)
+    check(_n["objetivo_label"] == _esperado,
+          f"{_nome[:28]!r} -> {_n['objetivo_label']!r} (esperado {_esperado!r})")
+# destination_type tem prioridade sobre o nome
+_n = normalizar_campanha_meta(dict(_base, name="[MENSAGENS] [WHATSAPP]", destination_type="INSTAGRAM_DIRECT"))
+check(_n["objetivo_label"] == "Mensagens no Direct", "destination_type vence o nome da campanha")
+# canal nao vaza para outros objetivos
+_n = normalizar_campanha_meta({"name": "[TRAFEGO PERFIL]", "objective": "LINK_CLICKS",
+    "effective_status": "ACTIVE", "amount_spent": "R$1,91 BRL", "impressions": "272",
+    "clicks": "6", "reach": "270", "cpc": "R$0,32 BRL", "cpm": "R$7,02 BRL",
+    "results": {"value": "5 (Instagram profile visits)"},
+    "cost_per_result": {"value": "R$0,38 BRL (Instagram profile visits)"}})
+check(_n["objetivo_label"] == "Trafego para o perfil".replace("Trafego", "Tr\u00e1fego"),
+      f"LINK_CLICKS -> {_n['objetivo_label']!r}")
+check(_n["canal_mensagem"] is None, "campanha que nao e de mensagem nao recebe canal")
+# LINK_CLICKS sem results cai no fallback por objective
+_n = normalizar_campanha_meta({"name": "Sem result", "objective": "LINK_CLICKS",
+    "effective_status": "ACTIVE", "amount_spent": "R$1,00 BRL", "impressions": "10",
+    "clicks": "1", "reach": "10"})
+check(_n["bloco"] == BLOCO_TRAFEGO_PERFIL, "LINK_CLICKS sem results usa fallback por objective")
 
 print("\n" + ("TODOS OS TESTES PASSARAM" if not falhas else f"{len(falhas)} FALHA(S)"))
 sys.exit(1 if falhas else 0)

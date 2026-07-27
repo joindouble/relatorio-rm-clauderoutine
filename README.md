@@ -152,3 +152,18 @@ Clientes atuais (`dados/Dados clientes.txt`):
   deixar de ser só rascunho) anexar a logo como inline CID.
 - **Scripts `clientes/hydrocenter.py` e `clientes/schneider.py`** — replicar o
   modelo quando for escalar.
+
+### Canal da campanha de mensagens (WhatsApp x Direct)
+
+Campanha de mensagem pode mandar a conversa pro **WhatsApp** ou pro **Direct do
+Instagram**. As métricas são as mesmas; o que muda é o rótulo mostrado ao
+cliente. O script decide **por campanha** (as duas podem rodar juntas):
+
+1. campo `destination_type` do Meta, se vier no JSON (`WHATSAPP` /
+   `INSTAGRAM_DIRECT` / `MESSENGER`);
+2. **nome da campanha** — é o sinal usado na prática: `[MENSAGENS] [DIRECT]` →
+   "Mensagens no Direct"; `[MENSAGENS] [WHATSAPP]` → "Mensagens no WhatsApp";
+3. rótulo de resultado da API;
+4. sem pista nenhuma → rótulo genérico "Mensagens" (nunca chuta o canal errado).
+
+Por isso a **nomenclatura das campanhas deve levar o canal no nome**.

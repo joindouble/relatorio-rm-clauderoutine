@@ -155,12 +155,74 @@ BLOCO_GOOGLE_PADRAO = "google_padrao"
 BLOCO_DESCONHECIDO = "desconhecido"  # nunca deve sobrar em produção — ver aviso no final
 
 OBJETIVO_LABEL_PT = {
-    BLOCO_MENSAGENS: "Mensagens no WhatsApp",
+    BLOCO_MENSAGENS: "Mensagens",  # refinado por canal (WhatsApp/Direct) em tempo de execução
     BLOCO_TRAFEGO_PERFIL: "Tráfego para o perfil",
     BLOCO_ALCANCE: "Alcance",
     BLOCO_GOOGLE_PADRAO: "Rede de Pesquisa",
     BLOCO_DESCONHECIDO: "Objetivo não mapeado",
 }
+
+# --- Canal da campanha de MENSAGENS (WhatsApp x Direct) --------------------
+# Campanha de mensagem pode mandar a conversa pro WhatsApp OU pro Direct do
+# Instagram. As MÉTRICAS são as mesmas (mesmo sub-bloco METRICA_MENSAGENS), o
+# que muda é o RÓTULO — o cliente precisa saber pra onde a conversa foi. Com
+# as duas rodando juntas, cada campanha é rotulada individualmente.
+CANAL_WHATSAPP = "whatsapp"
+CANAL_DIRECT = "direct"
+CANAL_GENERICO = "generico"
+
+CANAL_LABEL_PT = {
+    CANAL_WHATSAPP: "Mensagens no WhatsApp",
+    CANAL_DIRECT: "Mensagens no Direct",
+    CANAL_GENERICO: "Mensagens",
+}
+CANAL_TITULO_PT = {
+    CANAL_WHATSAPP: "Mensagens · WhatsApp",
+    CANAL_DIRECT: "Mensagens · Direct",
+    CANAL_GENERICO: "Mensagens",
+}
+
+# Valores do campo destination_type do Meta (sinal mais confiável quando existe).
+_CANAL_POR_DESTINO = {
+    "WHATSAPP": CANAL_WHATSAPP,
+    "WHATSAPP_MESSAGE": CANAL_WHATSAPP,
+    "INSTAGRAM_DIRECT": CANAL_DIRECT,
+    "INSTAGRAM_DIRECT_MESSAGE": CANAL_DIRECT,
+    "MESSENGER": CANAL_DIRECT,
+    "MESSAGENGER": CANAL_DIRECT,
+}
+
+# Palavras no nome da campanha / rótulo de resultado. Ordem importa: WhatsApp
+# primeiro (mais específico) para "[Mensagens][WhatsApp]" não cair em Direct.
+_CANAL_KEYWORDS = [
+    (CANAL_WHATSAPP, ["whatsapp", "whats app", "wpp", "zap", " wa ", "[wa]"]),
+    (CANAL_DIRECT, ["direct", "instagram", " ig ", "[ig]", "dm"]),
+]
+
+
+def detectar_canal_mensagem(nome, destino=None, resultado_rotulo=None):
+    """Descobre se a campanha de mensagem é WhatsApp ou Direct.
+
+    Ordem de confiança:
+      1. `destination_type` do Meta (dado da API, quando a Routine salvar);
+      2. palavra-chave no NOME da campanha (padrão de nomenclatura da agência:
+         "[MENSAGENS] [DIRECT]", "[Mensagens][WhatsApp]");
+      3. palavra-chave no rótulo de resultado da API;
+      4. genérico ("Mensagens") — nunca chuta WhatsApp por padrão, para não
+         escrever no relatório do cliente um canal que pode estar errado.
+    """
+    if destino:
+        canal = _CANAL_POR_DESTINO.get(str(destino).strip().upper())
+        if canal:
+            return canal
+    for texto in (nome, resultado_rotulo):
+        if not texto:
+            continue
+        alvo = f" {str(texto).lower()} "
+        for canal, palavras in _CANAL_KEYWORDS:
+            if any(p in alvo for p in palavras):
+                return canal
+    return CANAL_GENERICO
 
 _LABEL_KEYWORDS = [
     (BLOCO_MENSAGENS, ["messag", "conversa"]),
@@ -175,6 +237,7 @@ _OBJETIVO_FALLBACK = {
     "OUTCOME_AWARENESS": BLOCO_ALCANCE,
     "POST_ENGAGEMENT": BLOCO_TRAFEGO_PERFIL,  # objetivo legado — validar em campo real ativo
     "OUTCOME_TRAFFIC": BLOCO_TRAFEGO_PERFIL,
+    "LINK_CLICKS": BLOCO_TRAFEGO_PERFIL,      # validado com dado real da HydroCenter (tráfego p/ perfil)
 }
 
 
@@ -212,14 +275,31 @@ def normalizar_campanha_meta(raw):
     custo_resultado, rotulo = parse_meta_result_field(raw.get("cost_per_result"))
     qtd_resultado, _ = parse_meta_result_field(raw.get("results"))
 
+    nome = raw.get("name", "")
     bloco = mapear_bloco_meta(raw.get("objective"), rotulo)
+
+    # Campanha de mensagem: rotula o canal (WhatsApp x Direct) por campanha, para
+    # o relatório dizer pro cliente onde a conversa cai. Demais objetivos usam o
+    # rótulo padrão do bloco.
+    if bloco == BLOCO_MENSAGENS:
+        canal = detectar_canal_mensagem(
+            nome, raw.get("destination_type") or raw.get("messaging_destination"), rotulo
+        )
+        objetivo_label = CANAL_LABEL_PT[canal]
+        canal_titulo = CANAL_TITULO_PT[canal]
+    else:
+        canal = None
+        objetivo_label = OBJETIVO_LABEL_PT.get(bloco, bloco)
+        canal_titulo = objetivo_label
 
     return {
         "id": raw.get("id"),
-        "nome": raw.get("name", ""),
+        "nome": nome,
         "plataforma": "Meta Ads",
         "bloco": bloco,
-        "objetivo_label": OBJETIVO_LABEL_PT.get(bloco, bloco),
+        "canal_mensagem": canal,
+        "canal_titulo": canal_titulo,
+        "objetivo_label": objetivo_label,
         "status": raw.get("effective_status"),
         "investimento": investimento,
         "impressoes": impressoes,
@@ -264,6 +344,8 @@ def normalizar_campanha_google(raw):
         "nome": raw.get("campaign", ""),
         "plataforma": "Google Ads",
         "bloco": BLOCO_GOOGLE_PADRAO,
+        "canal_mensagem": None,
+        "canal_titulo": OBJETIVO_LABEL_PT[BLOCO_GOOGLE_PADRAO],
         "objetivo_label": OBJETIVO_LABEL_PT[BLOCO_GOOGLE_PADRAO],
         "status": raw.get("campaign_status"),
         "investimento": float(raw.get("spend", 0) or 0),
@@ -602,6 +684,7 @@ def montar_bloco_campanha(molde_campanha, campanha):
     valores = {
         "campanha_plataforma": campanha["plataforma"],
         "campanha_objetivo_label": campanha["objetivo_label"],
+        "campanha_canal_titulo": campanha.get("canal_titulo", campanha["objetivo_label"]),
         "campanha_nome": campanha["nome"],
         "campanha_investimento": fmt_brl(campanha["investimento"]),
         "campanha_grafico": campanha["grafico_html"],
