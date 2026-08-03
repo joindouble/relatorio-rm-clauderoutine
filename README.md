@@ -1,5 +1,9 @@
 # Automação de Relatórios Double
 
+> **PAUSADO (03/08/2026):** parceria com R&M Higiene Profissional em pausa.
+> Routine desativada no claude.ai; `clientes/rm_higiene.py` também aborta
+> sozinho (flag `PAUSADO`). Reativar: remover a flag do script e a Routine.
+
 Relatório semanal de performance (Meta Ads + Google Ads) em HTML, gerado por
 script Python determinístico e enviado como **rascunho no Gmail** para cada
 cliente. Orquestração via **Claude Cloud Routines** (sem servidor próprio).

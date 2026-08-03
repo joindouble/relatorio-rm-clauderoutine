@@ -40,6 +40,12 @@ CLIENTE = {
     # Nome/contato/logo da agência vêm dos defaults do report_engine (AGENCIA_*).
 }
 
+# Parceria pausada em 03/08/2026. Routine desativada no claude.ai; esta trava
+# é o segundo freio — se a Routine for reativada por engano, o script aborta
+# antes de qualquer busca/rascunho. Remover esta linha quando a parceria
+# voltar.
+PAUSADO = "Parceria com R&M pausada em 03/08/2026. Repositório e Routine congelados até reativação manual."
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_DIR = os.path.dirname(BASE_DIR)
 
@@ -141,6 +147,8 @@ def manifest():
 
 
 if __name__ == "__main__":
+    if PAUSADO:
+        sys.exit(f"[PAUSADO] {PAUSADO}")
     if "--info" in sys.argv:
         print(json.dumps(manifest(), ensure_ascii=False, indent=2))
     else:
