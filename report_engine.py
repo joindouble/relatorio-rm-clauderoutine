@@ -528,21 +528,38 @@ def _barras_verticais_html(valores, labels, plot=150, cor="#3B82F6"):
     )
 
 
-def grafico_investimento_por_dia(dados_por_dia):
-    """Barras Seg..Dom com o investimento de cada dia (HTML puro)."""
+def _grafico_sem_serie(total=None):
+    """Aviso honesto para quando a série por dia NÃO veio da API.
+
+    Antes existia um fallback que jogava o total do período numa única barra
+    (domingo no semanal, última semana no mensal). Visualmente isso mentia:
+    o cliente lia "gastou tudo no domingo". Sem série, não se desenha barra —
+    mostra-se o aviso e, se houver, o total agregado (esse sim é real)."""
+    txt = "Detalhamento por dia indisponível para este período."
+    if total:
+        txt += " Investimento total: R$ " + _fmt_valor_barra(round(total, 2)) + "."
+    return ('<table role="presentation" width="100%" cellpadding="0" cellspacing="0" '
+            'border="0"><tr><td align="center" bgcolor="#0F172A" '
+            'style="background-color:#0F172A;border-radius:6px;padding:22px 12px;'
+            "font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:17px;"
+            'color:#94A3B8;">' + txt + '</td></tr></table>')
+
+
+def grafico_investimento_por_dia(dados_por_dia, total=None):
+    """Barras Seg..Dom com o investimento de cada dia (HTML puro). Sem série,
+    avisa que o detalhamento diário não veio — não inventa barra."""
     valores = _serie_semanal(dados_por_dia, "spend")
+    if not any(valores):
+        return _grafico_sem_serie(total)
     return _barras_verticais_html(valores, _DIAS_SEMANA, plot=150, cor="#3B82F6")
 
 
 def grafico_campanha(serie_diaria, total=None, cor="#3B82F6"):
     """Barras Seg..Dom do gasto diário da campanha (HTML puro). Sem série
-    diária, cai no fallback de barra única com o total da semana."""
-    if serie_diaria:
-        valores = _serie_semanal(serie_diaria, "spend")
-    elif total:
-        valores = [0, 0, 0, 0, 0, 0, round(total, 2)]
-    else:
-        valores = [0] * 7
+    diária, mostra aviso de dado indisponível (nunca uma barra falsa)."""
+    valores = _serie_semanal(serie_diaria, "spend") if serie_diaria else []
+    if not any(valores):
+        return _grafico_sem_serie(total)
     return _barras_verticais_html(valores, _DIAS_SEMANA, plot=120, cor=cor)
 
 
@@ -802,7 +819,8 @@ def gerar_relatorio_html(template_path, cliente, campanhas_meta, campanhas_googl
         "dash_cliques_totais": fmt_int(geral["cliques"]),
         "dash_cpc_medio": fmt_brl(geral["cpc"]),
         "dash_grafico_investimento_por_plataforma": grafico_investimento_por_plataforma(total_meta, total_google),
-        "dash_grafico_investimento_por_dia": grafico_investimento_por_dia(serie_diaria_geral),
+        "dash_grafico_investimento_por_dia": grafico_investimento_por_dia(
+            serie_diaria_geral, total=geral["investimento"]),
         "insight_texto": insight_texto,
         "agencia_nome": cliente.get("agencia_nome", AGENCIA_NOME),
         "agencia_contato": cliente.get("agencia_contato", AGENCIA_CONTATO),

@@ -49,7 +49,7 @@ do que a Routine faz toda segunda-feira (só isto, nada além):
    prompt: o script é a fonte única.
 2. Busca Google (Flyweel `query_metrics`, 2 queries: agregado + série diária) e
    salva em `dados/rm_higiene_google_raw.json`.
-3. Busca Meta (`ads_get_field_context` → `ads_get_ad_entities`, `time_increment:1`)
+3. Busca Meta (`ads_get_field_context` → `ads_get_ad_entities`, uma chamada por dia/bloco com `time_range` since=until)
    e salva em `dados/rm_higiene_meta_raw.json`.
 4. `python clientes/rm_higiene.py` → gera o HTML.
 5. QA (sem placeholder cru, CTR ≤ 100%, período confere, < 100 KB).
@@ -63,7 +63,7 @@ com os campos de `ads_get_ad_entities` (`amount_spent`, `impressions`,
 `clicks`, `reach`, `cpc`, `cpm`, `cost_per_result`, `results`, `objective`,
 `effective_status`). Valores vêm como **texto** (`"R$29,51 BRL"`, `"Not
 available"`) — o motor faz o parsing. Cada campanha pode trazer
-`serie_diaria: [{"date","spend"}]` (breakdown diário via `time_increment:1`;
+`serie_diaria: [{"date","spend"}]` (breakdown diário via uma chamada por dia/bloco com `time_range` since=until;
 datas em PT-BR são aceitas).
 
 **Google** — `dados/<cliente>_google_raw.json`:
@@ -167,3 +167,9 @@ cliente. O script decide **por campanha** (as duas podem rodar juntas):
 4. sem pista nenhuma → rótulo genérico "Mensagens" (nunca chuta o canal errado).
 
 Por isso a **nomenclatura das campanhas deve levar o canal no nome**.
+
+> Série por dia: o parâmetro `time_increment` da MCP do Meta devolve lista
+> vazia nessas contas (verificado em 03/08/2026). A série é montada com uma
+> chamada `ads_get_ad_entities` por dia (`time_range` com `since` = `until`).
+> Sem série, o gráfico mostra aviso de dado indisponível — nunca uma barra
+> única com o total (isso jogava tudo em domingo/última semana).

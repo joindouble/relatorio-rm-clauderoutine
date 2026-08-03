@@ -146,9 +146,19 @@ PASSO 3 — Buscar dados do Meta Ads
     cpc, cpm, ctr, results, cost_per_result, objective, effective_status.
 
 3b. `ads_get_ad_entities` para a conta <meta_ad_account_id>, no nível de
-    CAMPANHA, no período <periodo.start>..<periodo.end>, pedindo o
-    detalhamento diário (time_increment = 1) para obter a série diária de
-    gasto por campanha.
+    CAMPANHA, com time_range {"since":"<periodo.start>","until":"<periodo.end>"}.
+    Esta chamada traz os TOTAIS da semana por campanha. NÃO passe
+    `time_increment` nela.
+
+3c. SÉRIE POR DIA — **não use `time_increment`**. Nesta conta o parâmetro
+    devolve lista vazia (limitação da ferramenta MCP), e é por isso que os
+    gráficos por dia saíram zerados. Em vez dele, faça UMA chamada
+    `ads_get_ad_entities` POR DIA da semana — 7 chamadas, cada uma com
+    time_range {"since":"<dia>","until":"<dia>"} (mesmo dia nos dois campos),
+    level CAMPANHA e fields ["id","name","amount_spent"]. O amount_spent que
+    voltar em cada chamada é o ponto daquele dia, para aquela campanha.
+    Campanha que não aparecer no dia (ou vier sem amount_spent) gastou R$0
+    naquele dia. NUNCA repita o total da semana num dia.
 
 Monte o arquivo <caminho_meta_json> como um ARRAY de campanhas, cada uma:
     {
@@ -173,7 +183,10 @@ Regras do PASSO 3:
     ("R$29,81 BRL", "1.327", "2,64%"), "Not available", ou o formato lista
     [{"indicator": "..."}]. NÃO limpe, NÃO converta para número: o script faz
     todo o parsing (inclusive o ponto como separador de milhar do pt-BR).
-  • "serie_diaria" = gasto por dia (do time_increment:1). A data pode vir em
+  • "serie_diaria" = gasto por dia, montado com as 7 chamadas de 1 dia (nunca
+    com time_increment). Se um dia não retornar a campanha, grave spend 0 ou
+    omita o dia — jamais concentre o total da semana num dia só. A data pode
+    ser gravada em ISO ("2026-07-27") ou em
     PT-BR ("8 de julho de 2026") — tudo bem, o script entende.
   • Traga TODAS as campanhas da conta que tiveram entrega no período; o script
     decide quais aparecem (investimento > 0) e descarta as zeradas. Campanha
